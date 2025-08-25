@@ -4,7 +4,7 @@ const taskList = document.getElementById('taskList');
 
 addTaskBtn.addEventListener('click', () => {
   const taskText = taskInput.value.trim();
-  if (taskText !== '') {
+  if (taskText) {
     const li = document.createElement('li');
     li.textContent = taskText;
     taskList.appendChild(li);

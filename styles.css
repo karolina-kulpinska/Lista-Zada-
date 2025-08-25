@@ -1,38 +1,31 @@
 .body {
   font-family: Arial, sans-serif;
-  background-color: #eee;
   padding: 20px;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  padding: 20px;
-  box-shadow: 0 0 10px #ccc;
 }
 
 .title {
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .task-label {
   font-weight: bold;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .task-input-field {
-  width: 75%;
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
+  width: 200px;
   margin-right: 10px;
-  border: 1px solid #333;
+  border: 1px solid #666;
   border-radius: 3px;
 }
 
 .task-button {
-  padding: 10px 20px;
+  padding: 8px 12px;
+  font-size: 1rem;
   background-color: #006666;
   color: white;
   border: none;
@@ -44,14 +37,26 @@
   background-color: #004d4d;
 }
 
+.nowe-zadanie {
+  margin-top: 30px;
+  max-width: 350px;
+  border-top: 2px solid #006666;
+  padding-top: 10px;
+}
+
+.nowe-zadanie h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #006666;
+}
+
 .task-list {
   list-style: none;
   padding-left: 0;
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
+  margin-top: 10px;
 }
 
 .task-list li {
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #ccc;
 }
