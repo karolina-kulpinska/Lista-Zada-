@@ -6,12 +6,13 @@
   <title>Lista zadań</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="body">
+<body>
   <div class="container">
-    <h1 class="h1">Lista zadań</h1>
-    <input type="text" class="input" placeholder="Wpisz nowe zadanie" />
-    <button class="button">Dodaj</button>
-    <ul class="ul"></ul>
+    <div class="input-button">
+      <input type="text" placeholder="Wpisz zadanie" id="taskInput" />
+      <button id="addBtn">Dodaj</button>
+    </div>
+    <ul id="taskList"></ul>
   </div>
 
   <script src="script.js"></script>

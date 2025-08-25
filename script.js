@@ -1,27 +1,26 @@
-const input = document.querySelector('.input');
-const button = document.querySelector('.button');
-const ul = document.querySelector('.ul');
+const input = document.getElementById('taskInput');
+const addBtn = document.getElementById('addBtn');
+const taskList = document.getElementById('taskList');
 
-button.addEventListener('click', () => {
-  const taskText = input.value.trim();
-  if (taskText === '') return;
+addBtn.addEventListener('click', () => {
+  const text = input.value.trim();
+  if (text === '') return;
 
   const li = document.createElement('li');
-  li.className = 'li';
+  li.textContent = text;
 
-  li.textContent = taskText;
+  const delBtn = document.createElement('button');
+  delBtn.textContent = '×';
+  delBtn.className = 'delete-btn';
+  delBtn.onclick = () => taskList.removeChild(li);
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.textContent = '×';
-
-  deleteBtn.addEventListener('click', () => {
-    ul.removeChild(li);
-  });
-
-  li.appendChild(deleteBtn);
-  ul.appendChild(li);
+  li.appendChild(delBtn);
+  taskList.appendChild(li);
 
   input.value = '';
   input.focus();
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') addBtn.click();
 });
