@@ -1,33 +1,27 @@
-document.getElementById('addButton').addEventListener('click', addTask);
+const input = document.querySelector('.input');
+const button = document.querySelector('.button');
+const ul = document.querySelector('.ul');
 
-function addTask() {
-  const taskInput = document.getElementById('taskInput');
-  const taskValue = taskInput.value.trim();
+button.addEventListener('click', () => {
+  const taskText = input.value.trim();
+  if (taskText === '') return;
 
-  if (taskValue !== '') {
-    const taskList = document.getElementById('taskList');
-    
-    const li = document.createElement('li');
-    const span = document.createElement('span');
-    span.textContent = taskValue;
-    
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'X';
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.onclick = function () {
-      taskList.removeChild(li);
-    };
+  const li = document.createElement('li');
+  li.className = 'li';
 
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
-    taskList.appendChild(li);
+  li.textContent = taskText;
 
-    taskInput.value = ''; // Wyczyść pole po dodaniu zadania
-  }
-}
+  const deleteBtn = document.createElement('button');
+  deleteBtn.className = 'delete-btn';
+  deleteBtn.textContent = '×';
 
-document.getElementById('taskInput').addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    addTask();
-  }
+  deleteBtn.addEventListener('click', () => {
+    ul.removeChild(li);
+  });
+
+  li.appendChild(deleteBtn);
+  ul.appendChild(li);
+
+  input.value = '';
+  input.focus();
 });
