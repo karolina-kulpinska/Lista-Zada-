@@ -59,13 +59,12 @@
 .task-list li {
   padding: 8px 0;
   border-bottom: 1px solid #ccc;
-}
-.task-list li {
-  padding: 8px 0;
-  border-bottom: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.task-list li span {
+  flex-grow: 1;
 }
 
 .delete-btn {
@@ -76,8 +75,11 @@
   cursor: pointer;
   padding: 0 5px;
   transition: color 0.3s ease;
+  margin-left: 38px;
 }
 
 .delete-btn:hover {
   color: #ff0000;
 }
+
+
