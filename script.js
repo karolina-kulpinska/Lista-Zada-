@@ -1,24 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("button").addEventListener("click", addTask);
-});
+document.getElementById('addButton').addEventListener('click', addTask);
 
 function addTask() {
-    let taskInput = document.getElementById("taskInput");
-    let taskText = taskInput.value.trim();
+  const taskInput = document.getElementById('taskInput');
+  const taskValue = taskInput.value.trim();
+
+  if (taskValue !== '') {
+    const taskList = document.getElementById('taskList');
     
-    if (taskText === "") return;
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.textContent = taskValue;
     
-    let li = document.createElement("li");
-    li.textContent = taskText;
-    
-    let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Usuń";
-    deleteButton.onclick = function() {
-        li.remove();
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'X';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.onclick = function () {
+      taskList.removeChild(li);
     };
 
-    li.appendChild(deleteButton);
-    document.getElementById("taskList").appendChild(li);
-    
-    taskInput.value = "";
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+
+    taskInput.value = ''; // Wyczyść pole po dodaniu zadania
+  }
 }
+
+document.getElementById('taskInput').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    addTask();
+  }
+});
