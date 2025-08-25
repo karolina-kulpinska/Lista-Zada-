@@ -7,7 +7,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container"><!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista zadań</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
   <div class="container">
+    <h1 class="title">Lista zadań</h1>
+
+    <div class="task-input">
+      <label for="taskInput" class="task-label">Dodaj nowe zadanie</label>
+      <input type="text" id="taskInput" class="task-input-field" placeholder="Co jest do zrobienia?" />
+      <button id="addTaskBtn" class="task-button">Dodaj zadanie</button>
+    </div>
+
+    <ul id="taskList" class="task-list">
+      <!-- tutaj pojawią się zadania -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
     <div class="input-button">
       <input type="text" placeholder="Wpisz zadanie" id="taskInput" />
       <button id="addBtn">Dodaj</button>
