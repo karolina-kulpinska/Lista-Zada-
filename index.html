@@ -4,21 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lista zadań</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body class="body">
   <h1 class="title">Lista zadań</h1>
 
   <label for="taskInput" class="task-label">Dodaj nowe zadanie</label>
-  <input type="text" id="taskInput" class="task-input-field" placeholder="Co jest do zrobienia?" />
+  <input
+    type="text"
+    id="taskInput"
+    class="task-input-field"
+    placeholder="Co jest do zrobienia?"
+  />
   <button id="addTaskBtn" class="task-button">Dodaj zadanie</button>
 
   <section class="nowe-zadanie">
     <h2>Nowe zadanie</h2>
-    <ul id="taskList" class="task-list">
-      <!-- zadania będą tutaj -->
-    </ul>
+    <ul id="taskList" class="task-list"></ul>
   </section>
 </body>
 </html>
