@@ -1,31 +1,37 @@
-const taskInput = document.getElementById('taskInput');
-const addTaskBtn = document.getElementById('addTaskBtn');
-const taskList = document.getElementById('taskList');
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const taskText = input.value.trim();
 
-addTaskBtn.addEventListener('click', () => {
-  const taskText = taskInput.value.trim();
-  if (taskText) {
-    const li = document.createElement('li');
-    const taskSpan = document.createElement('span');
-    taskSpan.textContent = taskText;
-    li.appendChild(taskSpan);
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '❌';
-    deleteBtn.className = 'delete-btn';
-    li.appendChild(deleteBtn);
-    deleteBtn.addEventListener('click', () => {
-      taskList.removeChild(li);
-    });
-    taskList.appendChild(li);
-    taskInput.value = '';
-    taskInput.focus();
-  } else {
-    alert('Proszę wpisać jakieś zadanie!');
+  if (taskText === "") {
+    alert("Wpisz treść zadania!");
+    return;
   }
-});
 
-taskInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    addTaskBtn.click();
-  }
-});
+  const li = document.createElement("li");
+  li.classList.add("taskItem");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.classList.add("checkbox");
+  checkbox.addEventListener("change", function () {
+    li.classList.toggle("completed");
+  });
+
+  const span = document.createElement("span");
+  span.textContent = taskText;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "🗑️";
+  deleteBtn.classList.add("delete");
+  deleteBtn.onclick = function () {
+    li.remove();
+  };
+
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+
+  document.getElementById("taskList").appendChild(li);
+
+  input.value = "";
+}
