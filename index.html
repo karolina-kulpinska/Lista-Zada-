@@ -16,6 +16,11 @@
       <button class="button" onclick="addTask()">Dodaj zadanie</button>
     </div>
 
+    <div class="task-controls" id="taskControls" style="display:none;">
+      <button class="control-button" id="toggleCompletedBtn" onclick="toggleHideCompleted()">Ukryj ukończone</button>
+      <button class="control-button" id="completeAllBtn" onclick="markAllCompleted()">Ukończ wszystkie</button>
+    </div>
+
     <h3 class="naglowek-maly">Lista zadań</h3>
     <ul class="taskList" id="taskList"></ul>
   </div>
